@@ -4,8 +4,4 @@ parameters:
 services:
     problematic.acl_manager:
         class: "%problematic.acl_manager.class%"
-        arguments:
-            aclProvider: "@security.acl.provider"
-            tokenStorage: "@security.token_storage"
-            authorizationChecker: "@security.authorization_checker"
-            objectIdentityRetrievalStrategy: "@security.acl.object_identity_retrieval_strategy"
+        arguments: ["@security.acl.dbal.provider","@security.token_storage", "@security.authorization_checker","@security.acl.object_identity_retrieval_strategy"]
